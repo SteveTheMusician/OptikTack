@@ -737,7 +737,7 @@
 
 			setTimeout(function () {
 
-				window.location.href = "index.php";
+				window.location.href = "index.html";
 
 			}, 2000);
 
@@ -1601,39 +1601,39 @@
 
 			<!-- email php and page restart ----------------------------------------- -->
 
-			<?php
-
-		$url = $_SERVER['REQUEST_URI'];
-
-		$parts = parse_url($url);
-		$output = [];
-		parse_str($parts['query'], $output);
-
-
-
-	$urmail = $output['mail'];
-
-
-
-	if( isset( $urmail ) ) {
-
-
-	echo "<script> stopanim();</script>";
-
-	echo "<script> mailsended();</script>";
-	echo "<script> autoslideaktionen();</script>";
-
-	} else {
-
-
-
-	 }
-
-
-
-		?>
-
-
+			<!-- <?php -->
+<!--  -->
+		<!-- $url = $_SERVER['REQUEST_URI']; -->
+<!--  -->
+		<!-- $parts = parse_url($url); -->
+		<!-- $output = []; -->
+		<!-- parse_str($parts['query'], $output); -->
+<!--  -->
+<!--  -->
+<!--  -->
+	<!-- $urmail = $output['mail']; -->
+<!--  -->
+<!--  -->
+<!--  -->
+	<!-- if( isset( $urmail ) ) { -->
+<!--  -->
+<!--  -->
+	<!-- echo "<script> stopanim();</script>"; -->
+<!--  -->
+	<!-- echo "<script> mailsended();</script>"; -->
+	<!-- echo "<script> autoslideaktionen();</script>"; -->
+<!--  -->
+	<!-- } else { -->
+<!--  -->
+<!--  -->
+<!--  -->
+	 <!-- } -->
+<!--  -->
+<!--  -->
+<!--  -->
+		<!-- ?> -->
+<!--  -->
+<!--  -->
 
 
 
