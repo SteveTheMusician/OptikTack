@@ -1,5 +1,6 @@
 # Fixes
 - Footer text Umbruch
+- FavIcon schöner
 - Bei mobile/Tablet auflösung Kontent meldung
 - Slider ohne anker
 - Slider 2 vertikales scrolling deaktivieren
