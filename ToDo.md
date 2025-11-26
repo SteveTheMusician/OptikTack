@@ -1,0 +1,11 @@
+# Fixes
+- Footer text Umbruch
+- Bei mobile/Tablet auflösung Kontent meldung
+- Slider ohne anker
+- Slider 2 vertikales scrolling deaktivieren
+- ggf maus tracking schneller (Vom dot Cursor)
+- Scripts in externe datei auslagern
+- JQuery rausschmeißen
+- PHPS löschen und ggf mit send scripts js ersetzen
+- Bilder und Daten strukturieren
+- Nicht verwendete Daten löschen
