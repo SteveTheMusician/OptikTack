@@ -19,3 +19,11 @@ Die Abgabe erfolgte zusammen mit allen anderen Materialien auf eine selbstgestal
 ---
 Abschluss 2020 mit Bestnote in Web & Ui-Design
 Kommentar der IHK war, dass die Webseite so schön ist, dass man lieber auf Ihr bleibt, statt zum Optiker zu gehen :D
+
+---
+## Quellen
+
+### Social Media Icons
+
+https://www.flaticon.com/free-icon/instagram-logo_87390
+https://www.flaticon.com/free-icon/facebook_2111392?term=facebook&page=1&position=3

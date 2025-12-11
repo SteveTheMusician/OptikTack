@@ -10,3 +10,4 @@
 - PHPS löschen und ggf mit send scripts js ersetzen
 - Bilder und Daten strukturieren
 - Nicht verwendete Daten löschen
+- light theme
