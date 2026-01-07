@@ -93,9 +93,7 @@ function textslider(id) {
 	setTimeout(function () {
 		$('.sliderbox').removeClass('slideblur');
 	}, 300);
-	var xhref = document.getElementById(id).getAttribute('href');
-	location.href = xhref;
-	return false;
+	// location = idd;
 }
 //textslider TEXTE
 function text1() {
@@ -230,35 +228,24 @@ function text6() {
 		$('.titelbox_render').css('height', '');
 	}, 550);
 }
-var selchild = 0;
-var stop = 0;
+
+let autoslidecount = 1
+let runGlassesSlider = 'true'
 function autoslide() {
-	let slidertimeout
-	if (stop == 0) {
-		slidertimeout = setTimeout(function () {
-			selchild += 1;
-			$clickss = $('center#dotcenter').children().eq(selchild);
-			$clickb = $clickss.attr("id");
+	let glassesImages = document.getElementsByClassName('sliderimage');
+	let glassesImageLength = glassesImages.length
+	if(runGlassesSlider === 'true') {
+		if(autoslidecount > glassesImageLength -1) {
+			autoslidecount = 0
+			autoslide()
+		} else {
+			autoslidecount += 1
 			setTimeout(function () {
-				document.getElementById($clickb).click();
-			}, 200);
-			if ($clickss.length) {
-				autoslide();
-			} else {
-				selchild = 0;
-				$clickss = $('center#dotcenter').children().eq(selchild);
-				$clickss.click();
-			}
-			return false;
-		}, 4000);
-	} else {
-		clearTimeout(slidertimeout);
+				document.getElementById('dot'+autoslidecount).click()
+				autoslide()
+			}, 4000);
+		}
 	}
-}
-//animation stop function
-function stopanim() {
-	stop += 1;
-	autoslide()
 }
 //animation stop by scrolling
 $.fn.inview = function () {
@@ -270,9 +257,6 @@ $.fn.inview = function () {
 };
 $(window).on('resize scroll', function () {
 	if ($('#start').inview()) {
-		//stop slide animation
-		stop += 1;
-		autoslide()
 		//downarrow auto anim
 		$('.cubearrowholder').css('transform', 'matrix(1,0,0,1,4,-39) scale(1)');
 		$('.cubearrowholder').css('opacity', '1');
@@ -288,14 +272,7 @@ $(window).on('resize scroll', function () {
 
 var sliderakt = document.getElementById("slideraktionen");
 function autoslideaktionen() {
-	console.log('ok')
 	sliderakt.scrollLeft = 0;
-	// if (wait === 0) {
-	// setTimeout(function() {
-	// wait += 1;
-	// autoslideaktionen();
-	// }, 3600)
-	// } else {
 	var sliderImageCount = 1;
 	// get all images
 	var slide = document.querySelectorAll(".aktionsliderimage");
@@ -311,14 +288,9 @@ function autoslideaktionen() {
 		}
 	}
 	var count = 1;
-	function Slide(externcount) {
-		if (externcount > 0) {
-			count = externcount
-		}
+	function Slide() {
 		// max length reset
-		console.log('COUNT: ', count)
 		if (count > allSliderImages.length) {
-			console.log('count reset', count)
 			sliderakt.scrollLeft = 0;
 			sliderImageCount = 1;
 			count = 1;
@@ -395,9 +367,43 @@ function parallax() {
 	ttbox.style.transform = "matrix(1,0,0,1,0," + yPos + ")";
 	sl1.style.transform = "matrix(1,0,0,1,0," + yPos + ")";
 }
+
+function mailsended()
+{
+	runGlassesSlider = 'false'
+	setTimeout(function(){
+		location.href="#terminvereinbarung";
+		var msended = document.getElementById('mailbox_sended');
+		var mcont = document.getElementById('mailboxcontent');
+		var mrow = document.getElementById('mailbox_bottomrow');
+		mcont.style.display = "none";
+		mcont.style.display = "none";
+		mrow.style.display = "none";
+		msended.style.display = "flex";
+	},10);
+	setTimeout(function(){
+		window.location.href ="index.html";
+	},3000);
+}
+
+function checkMailSended(){
+	let url = window.location.search
+	let urlSearchParam
+	if(url){
+		urlSearchParam= url.split('?')[1]
+		if(urlSearchParam === 'mail=send'){
+			mailsended()
+		}
+	}
+}
+
 window.addEventListener("scroll", function () {
 	parallax();
+	runGlassesSlider = 'false'
 });
+
 document.addEventListener('DOMContentLoaded', function () {
-	autoslide(); autoslideaktionen()
+	setTimeout(function(){ autoslide();},500); autoslideaktionen();checkMailSended()
 })
+
+// document.getElementById('submitMail').addEventListener('click', () => mailsended())
