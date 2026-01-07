@@ -44,10 +44,10 @@ function bmenu() {
 		bmlfield.classList.add("bmactive_re");
 		bmlfield.classList.remove("bmactive");
 		menover.style.opacity = "0";
-		setTimeout(function() {
+		setTimeout(function () {
 			menover.style.display = "none";
 		}, 310);
-		setTimeout(function() {
+		setTimeout(function () {
 			bmlfield.classList.remove("bmactive_re");
 		}, 810)
 		$(".burgermenu_line").removeClass("bml_color_open");
@@ -57,7 +57,7 @@ function bmenu() {
 		bmlfield.classList.add("bmactive");
 		bmlfield.classList.remove("bmactive_re");
 		menover.style.display = "block";
-		setTimeout(function() {
+		setTimeout(function () {
 			menover.style.opacity = "1";
 		}, 10);
 		$('html').css("overflow", "hidden");
@@ -76,7 +76,7 @@ function textslider(id) {
 	var idd = "#" + id;
 	$(idd).addClass("dotclicked");
 	$('a').not(idd).removeClass('dotclicked');
-	setTimeout(function() {
+	setTimeout(function () {
 		$('.titlebig').removeClass('tibi_anim_slide');
 		$('.subtext1').removeClass('tism_anim_slide');
 		$('.subtext2').removeClass('tism_anim2_slide');
@@ -84,13 +84,13 @@ function textslider(id) {
 		$('.subtext1').removeClass('tism_anim');
 		$('.subtext2').removeClass('tism_anim2');
 	}, 50);
-	setTimeout(function() {
+	setTimeout(function () {
 		$('.titlebig').addClass('tibi_anim_slide');
 		$('.subtext1').addClass('tism_anim_slide');
 		$('.subtext2').addClass('tism_anim2_slide');
 	}, 100);
 	$('.sliderbox').addClass('slideblur');
-	setTimeout(function() {
+	setTimeout(function () {
 		$('.sliderbox').removeClass('slideblur');
 	}, 300);
 	var xhref = document.getElementById(id).getAttribute('href');
@@ -102,7 +102,7 @@ function text1() {
 	var ueberschrift = document.getElementById('titelbig');
 	var subtext1 = document.getElementById('subtext1');
 	var subtext2 = document.getElementById('subtext2');
-	setTimeout(function() {
+	setTimeout(function () {
 		ueberschrift.innerHTML = "Mit<br>Optik Tack";
 		subtext1.innerHTML = "Modisch";
 		subtext2.innerHTML = "auf Zack";
@@ -124,7 +124,7 @@ function text2() {
 	var ueberschrift = document.getElementById('titelbig');
 	var subtext1 = document.getElementById('subtext1');
 	var subtext2 = document.getElementById('subtext2');
-	setTimeout(function() {
+	setTimeout(function () {
 		ueberschrift.innerHTML = "Optik Tack";
 		subtext1.innerHTML = "Ein Tick mehr<br>Durchblick ";
 		subtext2.innerHTML = "als andereswo";
@@ -146,7 +146,7 @@ function text3() {
 	var ueberschrift = document.getElementById('titelbig');
 	var subtext1 = document.getElementById('subtext1');
 	var subtext2 = document.getElementById('subtext2');
-	setTimeout(function() {
+	setTimeout(function () {
 		ueberschrift.innerHTML = "Tragen Sie's";
 		subtext1.innerHTML = "mit (Modischer)";
 		subtext2.innerHTML = "Fassung!";
@@ -168,7 +168,7 @@ function text4() {
 	var ueberschrift = document.getElementById('titelbig');
 	var subtext1 = document.getElementById('subtext1');
 	var subtext2 = document.getElementById('subtext2');
-	setTimeout(function() {
+	setTimeout(function () {
 		ueberschrift.innerHTML = "Klare Sicht";
 		subtext1.innerHTML = "und gute Laune";
 		subtext2.innerHTML = "Optik Tack";
@@ -190,7 +190,7 @@ function text5() {
 	var ueberschrift = document.getElementById('titelbig');
 	var subtext1 = document.getElementById('subtext1');
 	var subtext2 = document.getElementById('subtext2');
-	setTimeout(function() {
+	setTimeout(function () {
 		ueberschrift.innerHTML = "Mit Kind<br>und Kegel";
 		subtext1.innerHTML = "";
 		subtext2.innerHTML = "zu Optik Tack";
@@ -212,7 +212,7 @@ function text6() {
 	var ueberschrift = document.getElementById('titelbig');
 	var subtext1 = document.getElementById('subtext1');
 	var subtext2 = document.getElementById('subtext2');
-	setTimeout(function() {
+	setTimeout(function () {
 		ueberschrift.innerHTML = "Schutz<br>und Schönheit";
 		subtext1.innerHTML = "Sonnenbrillen";
 		subtext2.innerHTML = "von Optik Tack";
@@ -235,11 +235,11 @@ var stop = 0;
 function autoslide() {
 	let slidertimeout
 	if (stop == 0) {
-		slidertimeout = setTimeout(function() {
+		slidertimeout = setTimeout(function () {
 			selchild += 1;
 			$clickss = $('center#dotcenter').children().eq(selchild);
 			$clickb = $clickss.attr("id");
-			setTimeout(function() {
+			setTimeout(function () {
 				document.getElementById($clickb).click();
 			}, 200);
 			if ($clickss.length) {
@@ -248,12 +248,8 @@ function autoslide() {
 				selchild = 0;
 				$clickss = $('center#dotcenter').children().eq(selchild);
 				$clickss.click();
-				//var sldnum = selchild = 1;
-				//var locationhref = "#slider"+sldnum;
-				//location.href=locationhref;
 			}
 			return false;
-			//document.getElementById("dot2").click();
 		}, 4000);
 	} else {
 		clearTimeout(slidertimeout);
@@ -265,14 +261,14 @@ function stopanim() {
 	autoslide()
 }
 //animation stop by scrolling
-$.fn.inview = function() {
+$.fn.inview = function () {
 	var etop = $(this).offset().top;
 	var ebottom = etop + $(this).outerHeight();
 	var viewtop = $(window).scrollTop();
 	var viewbottom = viewtop + $(window).height();
 	return ebottom > viewtop && etop < viewbottom;
 };
-$(window).on('resize scroll', function() {
+$(window).on('resize scroll', function () {
 	if ($('#start').inview()) {
 		//stop slide animation
 		stop += 1;
@@ -287,60 +283,59 @@ $(window).on('resize scroll', function() {
 		$('.cubearrowholder').css('opacity', '');
 		$('.dwa_line').css('transform', '');
 	}
-	if ($('#aktionenbox').inview()) {} else {}
+	if ($('#aktionenbox').inview()) { } else { }
 });
-           var wait = 0;
-var sliderbg = 1;
+
+var sliderakt = document.getElementById("slideraktionen");
 function autoslideaktionen() {
-	var sliderakt = document.getElementById("slideraktionen");
+	console.log('ok')
 	sliderakt.scrollLeft = 0;
-	if (wait == 0) {
-		setTimeout(function() {
-			wait += 1;
-			autoslideaktionen();
-		}, 3600)
-	} else {
-		var Slide = function() {
-			$('.aktionabschnitt_bg').removeClass('akbg' + sliderbg);
-			var i;
-			var slide = document.querySelectorAll(".aktionsliderimage");
-			for (i = 1; i < slide.length; i++) {}
-			count++;
-			if (count > slide.length) {
-				var sliderakt = document.getElementById("slideraktionen");
-				sliderakt.scrollLeft = 0;
-				sliderbg = 0;
-				count = 1;
-			}
-			//slide[count-1].setAttribute("style","display:block;left:900px;");
-			var nid = slide[count - 1].getAttribute("id");
-			var sliderakt = document.getElementById("slideraktionen");
-			sliderakt.scrollLeft += 850;
-			sliderbg += 1;
-			$('.aktionabschnitt_bg').addClass('akbg' + sliderbg);
-			setTimeout(Slide, 3600);
-		}
-		var count = 1;
-		Slide();
+	// if (wait === 0) {
+	// setTimeout(function() {
+	// wait += 1;
+	// autoslideaktionen();
+	// }, 3600)
+	// } else {
+	var sliderImageCount = 1;
+	// get all images
+	var slide = document.querySelectorAll(".aktionsliderimage");
+	var allSliderImages = []
+	for (var i = 0; i < slide.length; i++) {
+		var number = i + 1
+		allSliderImages.push(number)
 	}
-}
-   $(document).ready(function() {
-	$(".scrolled").on('click', function(event) {
-		if (this.hash !== "") {
-			event.preventDefault();
-			var hash = this.hash;
-			$('html, body').animate({
-				scrollTop: $(hash).offset().top
-			}, 800, function() {
-				window.location.hash = hash;
-			});
+	function removeAllAkbgClasses() {
+		for (var i = 0; i < slide.length; i++) {
+			var number = i + 1
+			$('.aktionabschnitt_bg').removeClass('akbg' + number);
 		}
-	});
-});
-//loadingscript
-window.addEventListener("load", function() {
+	}
+	var count = 1;
+	function Slide(externcount) {
+		if (externcount > 0) {
+			count = externcount
+		}
+		// max length reset
+		console.log('COUNT: ', count)
+		if (count > allSliderImages.length) {
+			console.log('count reset', count)
+			sliderakt.scrollLeft = 0;
+			sliderImageCount = 1;
+			count = 1;
+		} else if (count >= 2) {
+			sliderakt.scrollLeft += 850;
+		}
+		removeAllAkbgClasses()
+		$('.aktionabschnitt_bg').addClass('akbg' + sliderImageCount);
+		sliderImageCount += 1;
+		count++;
+		setTimeout(Slide, 3600);
+	}
+	Slide();
+}
+window.addEventListener("load", function () {
 	var loader = document.getElementById("loader");
-	setTimeout(function() {
+	setTimeout(function () {
 		document.body.removeChild(loader)
 	}, 10);
 });
@@ -355,31 +350,25 @@ var ttbox = document.getElementById('titletextbox');
 const curso = curs;
 document.addEventListener('mousemove', e => {
 	curso.setAttribute("style", "top: " + (e.pageY - 1) + "px; left: " + (e.pageX - 1) + "px;")
-	var x = e.clientX;
 	var y = e.clientY;
-	//header move
-	var x2 = x / 100;
 	var y2 = y / 100;
-	var xx2 = x2 - 6.28;
-	var x3 = "-" + x2;
-	var x4 = x / 1000;
 	var y4 = y / 120;
 	br1.style.transform = "matrix(1,0,0,1,0," + y2 + ")";
 	br2.style.transform = "matrix(1,0,0,1,0," + y2 + ")";
 	sl1.style.marginTop = "-" + y4 + "px";
 	tscroll.style.transform = "matrix(1,0,0,1,0," + y4 + ")";
-	$(".cursored").hover(function() {
+	$(".cursored").hover(function () {
 		$("#cursor").css({
 			"width": "50px",
 			"height": "50px",
 			"opacity": "0.9"
 		});
-		setTimeout(function() {}, 200);
+		setTimeout(function () { }, 200);
 		$("#cursorcontainer").css({
 			"width": "50px",
 			"height": "50px"
 		});
-	}, function() {
+	}, function () {
 		$("#cursor").css({
 			"width": "",
 			"height": "",
@@ -406,9 +395,9 @@ function parallax() {
 	ttbox.style.transform = "matrix(1,0,0,1,0," + yPos + ")";
 	sl1.style.transform = "matrix(1,0,0,1,0," + yPos + ")";
 }
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
 	parallax();
 });
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
 	autoslide(); autoslideaktionen()
 })
