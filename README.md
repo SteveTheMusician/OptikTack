@@ -32,4 +32,4 @@ https://www.flaticon.com/free-icon/facebook_2111392?term=facebook&page=1&positio
 
 - Der Slider im Header ist gerne mal glitchy (schlechter code)
 - Wenn kein PHP vorhanden ist (wie auch auf der Git-Page) kannst du "?mail=send" an die URL anhängen, um die Bestätigung in der box zu sehen. (E-Mail wird aber nicht gesendet)
-- Der Code ist nicht im "CleanUp" nicht mehr 100% wie bei der abgabe. (Aber still messy :D)
+- Der Code ist nach dem "CleanUp" nicht mehr 100% wie bei der Abgabe. (Aber still messy :D)
