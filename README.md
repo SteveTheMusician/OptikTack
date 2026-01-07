@@ -1,4 +1,4 @@
-#Optik Tack (Abschluss Projekt)
+# Optik Tack (Abschluss Projekt)
 
 Hier findest du meine Webseite, welche ich als Abschlussprojekt für meine Designer-Ausbildung abgeben habe.
 Ursprünglisch wurde diese Seite mit Html,PHP und JQuery entwickelt - wird hier aber mal etwas aufgefrischt, damit sie nach all der Zeit noch richtig dargestellt werden kann.
